@@ -4,6 +4,8 @@ import ShopPage from "../pages/ShopPage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import AdminPage from "../pages/AdminPage";
+import DetailPage from "../pages/DetailPage";
+import CheckoutPage from "../pages/CheckoutPage";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
   {
     path: "/register",
     element: <RegisterPage />
+  },
+  {
+    path: "/detail",
+    element: <DetailPage />
+  },
+  {
+    path: "/checkout",
+    element: <CheckoutPage />
   },
   {
     path: "/admin",

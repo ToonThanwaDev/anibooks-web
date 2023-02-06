@@ -3,7 +3,7 @@ import "./SlideShow.css";
 export default function SlideShow() {
   return (
     <div className="container mx-auto px-4">
-      <div class="flex items-center justify-between py-8">
+      <div className="flex items-center justify-between py-8">
         <div className="slider">
           <div className="slider-track">
             <div className="slide">

@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
+import CloseButton from "../components/CloseButton";
 import Container from "../layouts/Container";
 
 export default function LoginPage() {
   return (
     <>
       <Container>
-        <div class="container mx-auto px-4">
+        <div className="container mx-auto px-4">
           <div>
+            <CloseButton />
             <div className="flex justify-center pt-5">
               <Link to="/">
                 <h3 className="text-4xl font-bold font-Brawler text-purple-600">
