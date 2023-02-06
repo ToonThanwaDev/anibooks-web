@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Input from "../../components/Input";
 import validateRegister from "../../validators/validateRegister";
+import * as authApi from "../../apis/authApi";
 
 const initialInput = {
   username: "",
@@ -17,14 +18,17 @@ export default function RegisterContainer() {
     setInput({ ...input, [e.target.name]: e.target.value });
   };
 
-  const handleSubmitForm = e => {
-    e.preventDefault();
-    const result = validateRegister(input);
-    if (result) {
-      setError({ ...error, ...result });
-    } else {
-      setError(initialInput);
-    }
+  const handleSubmitForm = async e => {
+    try {
+      e.preventDefault();
+      const result = validateRegister(input);
+      if (result) {
+        setError(result);
+      } else {
+        setError({});
+        await authApi.register(input);
+      }
+    } catch (err) {}
   };
 
   return (
