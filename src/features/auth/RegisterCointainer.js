@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import Input from "../../components/Input";
 import validateRegister from "../../validators/validateRegister";
 import * as authApi from "../../apis/authApi";
@@ -27,8 +29,11 @@ export default function RegisterContainer() {
       } else {
         setError({});
         await authApi.register(input);
+        toast.success("register success");
       }
-    } catch (err) {}
+    } catch (err) {
+      toast.error(err.response?.data.message);
+    }
   };
 
   return (
