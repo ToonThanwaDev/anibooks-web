@@ -12,7 +12,7 @@ export default function Homepage() {
         <div className="py-4 container mx-auto px-4 w-[1280px] h-[760px] ">
           <Carousel slideInterval={3000}>
             <img
-              src="https://res.cloudinary.com/dxz16dyxa/image/upload/v1675161116/personal%20project/Products/Top-10-Manga-of-2022_bwgi1j.webp"
+              src="https://res.cloudinary.com/dxz16dyxa/image/upload/v1675161116/personal%20project/Admin/Top-10-Manga-of-2022_bwgi1j.webp"
               alt="Adds 1"
             />
             <img
@@ -20,11 +20,11 @@ export default function Homepage() {
               alt="Adds 2"
             />
             <img
-              src="https://res.cloudinary.com/dxz16dyxa/image/upload/v1675403313/personal%20project/Products/Jujutsu_3_1_r4hfik.jpg"
+              src="https://res.cloudinary.com/dxz16dyxa/image/upload/v1675402825/personal%20project/Admin/cover_image_jujutsu_kzg5fp.jpg"
               alt="Adds 3"
             />
             <img
-              src="https://res.cloudinary.com/dxz16dyxa/image/upload/v1675402619/personal%20project/Products/desktop-wallpaper-chainsawman-volume-cover-chainsaw-man-manga_u3hqr0.jpg"
+              src="https://res.cloudinary.com/dxz16dyxa/image/upload/v1675402619/personal%20project/Admin/desktop-wallpaper-chainsawman-volume-cover-chainsaw-man-manga_u3hqr0.jpg"
               alt="Adds 4"
             />
           </Carousel>

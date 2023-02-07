@@ -15,6 +15,7 @@ const initialInput = {
 export default function RegisterContainer() {
   const [input, setInput] = useState(initialInput);
   const [error, setError] = useState(initialInput);
+  const navigate = useNavigate();
 
   const handleChangeInput = e => {
     setInput({ ...input, [e.target.name]: e.target.value });
@@ -30,6 +31,7 @@ export default function RegisterContainer() {
         setError({});
         await authApi.register(input);
         toast.success("register success");
+        navigate("/login");
       }
     } catch (err) {
       toast.error(err.response?.data.message);
