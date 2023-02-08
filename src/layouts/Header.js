@@ -35,7 +35,7 @@ export default function Header() {
           {isLogin ? (
             <div className="hidden sm:flex sm:items-center">
               <ShoppingCart />
-              <div className="hover:underline text-white text-xl">
+              <div className="hover:underline text-white text-xl font-GentiumPlus">
                 <Dropdown
                   label={authenticatedUser.username}
                   arrowIcon={false}

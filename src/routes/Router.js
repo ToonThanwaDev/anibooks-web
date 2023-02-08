@@ -6,7 +6,7 @@ import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
 import AdminPage from "../pages/AdminPage";
 import DetailPage from "../pages/DetailPage";
-import CheckoutPage from "../pages/CheckoutPage";
+import PaymentPage from "../pages/PaymentPage";
 
 const router = createBrowserRouter([
   {
@@ -34,8 +34,8 @@ const router = createBrowserRouter([
     element: <DetailPage />
   },
   {
-    path: "/checkout",
-    element: <CheckoutPage />
+    path: "/payment",
+    element: <PaymentPage />
   },
   {
     path: "/admin",
