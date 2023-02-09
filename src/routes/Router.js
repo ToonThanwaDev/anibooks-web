@@ -7,6 +7,7 @@ import RegisterPage from "../pages/RegisterPage";
 import AdminPage from "../pages/AdminPage";
 import DetailPage from "../pages/DetailPage";
 import PaymentPage from "../pages/PaymentPage";
+import ProtectedRoute from "../features/auth/ProtectedRoute";
 
 const router = createBrowserRouter([
   {
@@ -35,7 +36,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/payment",
-    element: <PaymentPage />
+    element: (
+      <ProtectedRoute>
+        <PaymentPage />
+      </ProtectedRoute>
+    )
   },
   {
     path: "/admin",
