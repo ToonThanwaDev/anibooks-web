@@ -30,7 +30,7 @@ const router = createBrowserRouter([
     element: <RegisterPage />
   },
   {
-    path: "/detail",
+    path: "/detail/:productId",
     element: <DetailPage />
   },
   {

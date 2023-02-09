@@ -18,7 +18,7 @@ export default function Card() {
       {productInfo?.map(el => (
         <div className="w-full max-w-sm bg-[#121212] shadow border rounded-md hover:border-purple-700 my-4">
           <div className="flex items-center justify-center">
-            <Link to="/detail">
+            <Link to={`/detail/${el.id}`}>
               <img
                 className="p-7 rounded-t-lg w-[200px] h-[270px] hover:scale-110 ease-in duration-500"
                 src={el.image}
@@ -27,7 +27,7 @@ export default function Card() {
             </Link>
           </div>
           <div class="pb-5">
-            <Link to="/detail" className="pb-4 text-center">
+            <Link to={`/detail/${el.id}`} className="pb-4 text-center">
               <p class="text-s font-GentiumPlus tracking-tight text-white dark:text-white hover:underline ">
                 {el.name}
               </p>

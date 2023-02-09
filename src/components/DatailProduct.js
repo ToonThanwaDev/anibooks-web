@@ -1,12 +1,30 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import * as productApi from "../apis/productApi";
 
 export default function DetailProduct() {
+  const [product, setProduct] = useState({});
+  const params = useParams();
+
+  const fetchProductId = async () => {
+    try {
+      const res = await productApi.productById(params.productId);
+      setProduct(res.data.products);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchProductId();
+  }, [params.productId]);
+
   return (
     <div className="md:flex items-center -mx-10">
       <div className="w-full md:w-1/2 px-10 mb-10 md:mb-0">
         <div className="relative">
           <img
-            src="https://res.cloudinary.com/dxz16dyxa/image/upload/v1675161116/personal%20project/Products/Slime_no.15_itayqw.jpg"
+            src={product.image}
             className="w-full relative z-10"
             alt="product image"
           />
@@ -15,18 +33,10 @@ export default function DetailProduct() {
       <div className="w-full md:w-1/2 px-10">
         <div className="mb-10">
           <h1 className="font-bold uppercase text-2xl mb-5 text-white font-GentiumPlus">
-            That time I got reincarnated as a slime vol.15
+            {product.name}
           </h1>
           <p className="text-sm text-white font-GentiumPlus">
-            A collection of short side stories taking place in the world of
-            Tensura The ordinary Mikami Satoru found himself dying after being
-            stabbed by a slasher. It should have been the end of his meager 37
-            years, but he found himself deaf and blind after hearing a
-            mysterious voice. He had been reincarnated into a slime! While
-            complaining about becoming the weak but famous slime and enjoying
-            the life of a slime at the same time, Mikami Satoru met with the
-            Catastrophe-level monster “Storm Dragon Veldora”, and his fate began
-            to move.
+            {product.datail}
           </p>
         </div>
         <div>
@@ -35,7 +45,7 @@ export default function DetailProduct() {
               ฿
             </span>
             <span className="font-bold text-4xl leading-none align-baseline font-GentiumPlus">
-              400
+              {product.price}
             </span>
           </div>
           <div className="mt-6 align-bottom flex items-center justify-evenly">
