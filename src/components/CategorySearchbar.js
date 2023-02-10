@@ -1,14 +1,14 @@
-export default function CategorySearchbar() {
+export default function CategorySearchbar({ searchWord, setSearchWord }) {
   return (
     <div className="container mx-auto px-4">
       <div className="flex items-center justify-between py-4">
         <div className="w-[20%] lg:max-w-sm mt-4">
-          <label for="underline_select" class="sr-only">
+          <label htmlFor="underline_select" class="sr-only">
             Underline select
           </label>
           <select
             id="underline_select"
-            class="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
+            className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
           >
             <option selected>Categories...</option>
             <option value="Action">Action</option>
@@ -37,8 +37,10 @@ export default function CategorySearchbar() {
             </svg>
             <input
               type="text"
-              placeholder="Search"
+              placeholder="Search Book or Writer Name"
               className="w-full py-3 pl-12 pr-4 text-gray-500 border rounded-md outline-none bg-gray-50 focus:bg-white focus:border-indigo-600"
+              value={searchWord}
+              onChange={e => setSearchWord(e.target.value)}
             />
           </div>
         </form>

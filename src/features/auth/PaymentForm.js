@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import * as authApi from "../../apis/authApi";
 
@@ -22,7 +22,6 @@ export default function PaymentForm() {
   const handleSubmitForm = async e => {
     try {
       e.preventDefault();
-      console.log(upload);
       const fromData = new FormData();
       fromData.append("firstName", input.firstName);
       fromData.append("lastName", input.lastName);
@@ -41,7 +40,10 @@ export default function PaymentForm() {
   return (
     <form className="mt-10 flex flex-col space-y-4" onSubmit={handleSubmitForm}>
       <div>
-        <label for="firstName" className="text-xs font-Brawler text-gray-500">
+        <label
+          htmlFor="firstName"
+          className="text-xs font-Brawler text-gray-500"
+        >
           First Name
         </label>
         <input
@@ -55,7 +57,10 @@ export default function PaymentForm() {
         />
       </div>
       <div>
-        <label for="lastName" className="text-xs font-Brawler text-gray-500">
+        <label
+          htmlFor="lastName"
+          className="text-xs font-Brawler text-gray-500"
+        >
           Last Name
         </label>
         <input
@@ -63,13 +68,16 @@ export default function PaymentForm() {
           id="lastName"
           name="lastName"
           placeholder="Last Name"
-          class="mt-1 block w-full rounded border-gray-300 bg-gray-50 py-3 px-4 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
+          className="mt-1 block w-full rounded border-gray-300 bg-gray-50 py-3 px-4 text-sm placeholder-gray-300 shadow-sm outline-none transition focus:ring-2 focus:ring-teal-500"
           value={input.lastName}
           onChange={handleChangeInput}
         />
       </div>
       <div className="relative">
-        <label for="telephone" className="text-xs font-Brawler text-gray-500">
+        <label
+          htmlFor="telephone"
+          className="text-xs font-Brawler text-gray-500"
+        >
           Tel.
         </label>
         <input
@@ -84,7 +92,7 @@ export default function PaymentForm() {
       </div>
 
       <div className="relative">
-        <label for="address" className="text-xs font-Brawler text-gray-500">
+        <label htmlFor="address" className="text-xs font-Brawler text-gray-500">
           Address
         </label>
         <input
@@ -112,13 +120,13 @@ export default function PaymentForm() {
       </div>
 
       <p className="mt-10 text-center text-sm font-Brawler text-gray-500">
-        By placing this order you agree to the{" "}
-        <a
-          href="#"
+        By placing this order you agree to the
+        <Link
+          to="#"
           className="whitespace-nowrap text-teal-400 underline hover:text-teal-600"
         >
           Terms and Conditions
-        </a>
+        </Link>
       </p>
       <button
         type="submit"

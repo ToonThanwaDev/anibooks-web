@@ -42,7 +42,7 @@ export default function Header() {
                   inline={true}
                 >
                   <Dropdown.Item>
-                    <Link to="#">My Order</Link>
+                    <Link to="/order/:userId">My Order</Link>
                   </Dropdown.Item>
                   <Dropdown.Divider />
                   <Dropdown.Item onClick={handleSignOut}>

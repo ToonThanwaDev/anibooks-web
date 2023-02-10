@@ -8,6 +8,8 @@ import AdminPage from "../pages/AdminPage";
 import DetailPage from "../pages/DetailPage";
 import PaymentPage from "../pages/PaymentPage";
 import ProtectedRoute from "../features/auth/ProtectedRoute";
+import OrderPage from "../pages/OrderPage";
+import CartPage from "../pages/CartPage";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,22 @@ const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <PaymentPage />
+      </ProtectedRoute>
+    )
+  },
+  {
+    path: "/order/:userId",
+    element: (
+      <ProtectedRoute>
+        <OrderPage />
+      </ProtectedRoute>
+    )
+  },
+  {
+    path: "/cart",
+    element: (
+      <ProtectedRoute>
+        <CartPage />
       </ProtectedRoute>
     )
   },

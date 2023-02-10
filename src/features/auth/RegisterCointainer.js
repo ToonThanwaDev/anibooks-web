@@ -42,7 +42,7 @@ export default function RegisterContainer() {
     <form className="mt-6" onSubmit={handleSubmitForm}>
       <div className="mb-2">
         <label
-          for="username"
+          htmlFor="username"
           className={`block text-sm font-semibold text-white`}
         >
           Username
@@ -55,7 +55,10 @@ export default function RegisterContainer() {
         />
       </div>
       <div className="mb-2">
-        <label for="email" className="block text-sm font-semibold text-white">
+        <label
+          htmlFor="email"
+          className="block text-sm font-semibold text-white"
+        >
           Email
         </label>
         <Input
@@ -67,7 +70,7 @@ export default function RegisterContainer() {
       </div>
       <div className="mb-2">
         <label
-          for="password"
+          htmlFor="password"
           className="block text-sm font-semibold text-white"
         >
           Password
@@ -82,7 +85,7 @@ export default function RegisterContainer() {
       </div>
       <div className="mb-2">
         <label
-          for="confirmPassword"
+          htmlFor="confirmPassword"
           className="block text-sm font-semibold text-white"
         >
           Confirm Password
