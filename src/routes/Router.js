@@ -4,12 +4,15 @@ import Homepage from "../pages/Homepage";
 import ShopPage from "../pages/ShopPage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
-import AdminPage from "../pages/AdminPage";
+import AdminPage from "../pages/admin/AdminPage";
 import DetailPage from "../pages/DetailPage";
 import PaymentPage from "../pages/PaymentPage";
 import ProtectedRoute from "../features/auth/ProtectedRoute";
 import OrderPage from "../pages/OrderPage";
 import CartPage from "../pages/CartPage";
+import AdminProductPage from "../pages/admin/AdminProductPage";
+import AddProduct from "../pages/admin/AddProduct";
+import EditProduct from "../pages/admin/EditProduct";
 
 const router = createBrowserRouter([
   {
@@ -61,8 +64,20 @@ const router = createBrowserRouter([
     )
   },
   {
-    path: "/admin",
+    path: "/admin/process",
     element: <AdminPage />
+  },
+  {
+    path: "/admin/product",
+    element: <AdminProductPage />
+  },
+  {
+    path: "/admin/add",
+    element: <AddProduct />
+  },
+  {
+    path: "/admin/edit",
+    element: <EditProduct />
   }
 ]);
 

@@ -3,14 +3,14 @@ export default function CategorySearchbar({ searchWord, setSearchWord }) {
     <div className="container mx-auto px-4">
       <div className="flex items-center justify-between py-4">
         <div className="w-[20%] lg:max-w-sm mt-4">
-          <label htmlFor="underline_select" class="sr-only">
+          <label htmlFor="underline_select" className="sr-only">
             Underline select
           </label>
           <select
             id="underline_select"
             className="block py-2.5 px-0 w-full text-sm text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer"
           >
-            <option selected>Categories...</option>
+            <option defaultValue>Categories</option>
             <option value="Action">Action</option>
             <option value="Harem">Harem</option>
             <option value="Horror">Horror</option>
