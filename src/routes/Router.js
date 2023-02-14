@@ -48,7 +48,7 @@ const router = createBrowserRouter([
     )
   },
   {
-    path: "/order/:userId",
+    path: "/order",
     element: (
       <ProtectedRoute>
         <OrderPage />
