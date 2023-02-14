@@ -65,19 +65,35 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin/process",
-    element: <AdminPage />
+    element: (
+      <ProtectedRoute>
+        <AdminPage />
+      </ProtectedRoute>
+    )
   },
   {
     path: "/admin/product",
-    element: <AdminProductPage />
+    element: (
+      <ProtectedRoute>
+        <AdminProductPage />
+      </ProtectedRoute>
+    )
   },
   {
     path: "/admin/add",
-    element: <AddProduct />
+    element: (
+      <ProtectedRoute>
+        <AddProduct />
+      </ProtectedRoute>
+    )
   },
   {
     path: "/admin/edit",
-    element: <EditProduct />
+    element: (
+      <ProtectedRoute>
+        <EditProduct />
+      </ProtectedRoute>
+    )
   }
 ]);
 

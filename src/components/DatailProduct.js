@@ -48,13 +48,7 @@ export default function DetailProduct() {
               {product.price}
             </span>
           </div>
-          <div className="mt-6 align-bottom flex items-center justify-evenly">
-            <button
-              type="button"
-              className="text-white font-GentiumPlus text-lg bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-4 focus:ring-purple-300 font-medium rounded-full px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900"
-            >
-              <i className="mdi mdi-cart -ml-2 mr-2"></i> Add to cart
-            </button>
+          <div className="mt-9 align-bottom flex items-center justify-start">
             <Link to="/payment">
               <button
                 type="button"

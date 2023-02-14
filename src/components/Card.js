@@ -1,9 +1,13 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as productApi from "../apis/productApi";
+import useCart from "../hooks/useCart";
+import { CartContext } from "../contexts/cartContext";
 
 export default function Card({ searchBook }) {
   const [productInfo, setProductInfo] = useState([]);
+
+  const { addToCart } = useCart(CartContext);
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -12,6 +16,10 @@ export default function Card({ searchBook }) {
     };
     fetchProduct();
   }, []);
+
+  const handleAddToCart = productId => {
+    addToCart(productId);
+  };
 
   return (
     <>
@@ -42,12 +50,15 @@ export default function Card({ searchBook }) {
               </span>
             </div>
             <div className="flex items-center justify-evenly pr-4">
-              <Link
-                to="#"
+              <button
                 className="text-white bg-purple-600 hover:bg-purple-800  font-GentiumPlus rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onClick={() => {
+                  handleAddToCart(el.id);
+                }}
               >
                 Add to cart
-              </Link>
+              </button>
+
               <Link
                 to="/payment"
                 className="text-white bg-purple-600 hover:bg-purple-800  font-GentiumPlus rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"

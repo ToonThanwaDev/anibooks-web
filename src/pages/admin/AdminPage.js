@@ -27,9 +27,6 @@ export default function AdminPage() {
           <h3 className="font-GentiumPlus text-center text-white text-md uppercase w-1/5 pl-9">
             Price
           </h3>
-          <h3 className="font-GentiumPlus text-center text-white text-md uppercase w-1/5 pl-9">
-            Date
-          </h3>
           <h3 className="font-GentiumPlus text-white text-md uppercase w-1/5 pl-16">
             Status
           </h3>

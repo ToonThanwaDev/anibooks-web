@@ -19,23 +19,19 @@ export default function AdminProcessContainer() {
             </div>
 
             <div className="flex">
-              <div className="font-bold text-md text-white font-GentiumPlus pl-2">
+              <div className="font-bold text-md text-white font-GentiumPlus pl-2 w-36">
                 Demon Slayer no.12
                 <h3 className="text-white font-GentiumPlus text-md ">3 pcs.</h3>
               </div>
             </div>
           </div>
 
-          <div className="text-white font-GentiumPlus text-md pl-24">
+          <div className="text-white font-GentiumPlus text-md pl-32">
             TodorokiShoto
           </div>
 
-          <div className="text-center font-GentiumPlus text-md text-white pl-16">
+          <div className="text-center font-GentiumPlus text-md text-white pl-12 pr-3">
             ฿ 400.00
-          </div>
-
-          <div className="text-center font-GentiumPlus text-md text-white pl-6">
-            12/02/2023
           </div>
 
           <Link

@@ -17,12 +17,6 @@ export default function OrderPage() {
               <h3 className="font-GentiumPlus text-white text-md uppercase w-2/5 ">
                 Products
               </h3>
-              <h3 className="font-GentiumPlus text-center text-white text-md uppercase w-1/5 pr-16 ">
-                Quantity
-              </h3>
-              <h3 className="font-GentiumPlus text-center text-white text-md uppercase w-1/5 pl-9">
-                Price
-              </h3>
               <h3 className="font-GentiumPlus text-white text-md uppercase w-1/5 pl-16">
                 Status
               </h3>
