@@ -7,18 +7,23 @@ import useAuth from "../hooks/useAuth";
 
 export default function Header() {
   const [isLogin, setIsLogin] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const { authenticatedUser, logout } = useAuth();
 
   useEffect(() => {
     if (authenticatedUser) {
       setIsLogin(true);
+      if (authenticatedUser.role === "admin") {
+        setIsAdmin(true);
+      }
     }
   }, [authenticatedUser]);
 
   const handleSignOut = () => {
     logout();
     setIsLogin(false);
+    setIsAdmin(false);
   };
 
   return (
@@ -41,6 +46,11 @@ export default function Header() {
                   arrowIcon={false}
                   inline={true}
                 >
+                  {isAdmin && (
+                    <Dropdown.Item>
+                      <Link to="/admin/process">Admin</Link>
+                    </Dropdown.Item>
+                  )}
                   <Dropdown.Item>
                     <Link to="/order">My Order</Link>
                   </Dropdown.Item>

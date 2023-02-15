@@ -1,47 +1,82 @@
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import * as orderApi from "../../apis/orderApi";
 
 export default function AdminProcessContainer() {
+  const [status, setStatus] = useState("pending");
+  const [admin, setAdmin] = useState([]);
+
+  const fetchOrder = async () => {
+    try {
+      const res = await orderApi.gerOrderUser();
+      setAdmin(res.data.getOrderUser);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleApprove = async (id, status) => {
+    try {
+      await orderApi.updateOrder(id, status);
+      fetchOrder();
+      setStatus("completed");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  const handleReject = async (id, status) => {
+    try {
+      await orderApi.updateOrder(id, status);
+      fetchOrder();
+      setStatus("rejected");
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchOrder();
+  }, []);
+
   return (
     <>
-      <div className="container px-4 py-4 border-b">
-        <div className="flex items-center justify-between mt-10 mb-5 ">
-          <div className="font-bold text-md text-white font-GentiumPlus ">
-            1
-          </div>
-
-          <div className="flex flex-row items-center ml-20 pl-6">
-            <div className="w-20">
-              <img
-                className="h-24"
-                src="https://res.cloudinary.com/dxz16dyxa/image/upload/v1675161115/personal%20project/Products/Demon_Slayer_tcboxo.webp"
-                alt="product"
-              />
+      {admin.map(el => (
+        <div className="container px-4 py-4 border-b">
+          <div className="flex items-center justify-between mt-10 mb-5 ">
+            <div className="font-bold text-md text-white font-GentiumPlus ">
+              {el.id}
             </div>
-
-            <div className="flex">
-              <div className="font-bold text-md text-white font-GentiumPlus pl-2 w-36">
-                Demon Slayer no.12
-                <h3 className="text-white font-GentiumPlus text-md ">3 pcs.</h3>
+            <div className="flex flex-row items-center ml-20 pl-6">
+              <div className="flex">
+                <div className="font-bold text-md text-white font-GentiumPlus pl-2 w-36">
+                  {/* {el.Payment.slipImage} */}
+                </div>
               </div>
             </div>
+            <div className="text-white font-GentiumPlus text-md pl-32">
+              {/* {el.username} */}
+            </div>
+            <div>
+              <button
+                className="text-center text-white font-GentiumPlus text-md bg-[#4BB543] uppercase w-20 rounded-md mr-4"
+                onClick={() => {
+                  handleApprove(el.id, "completed");
+                }}
+              >
+                <p>approve</p>
+              </button>
+              <button
+                className="text-center text-white font-GentiumPlus text-md bg-[#FF0000] uppercase w-20 rounded-md "
+                onClick={() => {
+                  handleReject(el.id, "rejected");
+                }}
+              >
+                <p>reject</p>
+              </button>
+            </div>
           </div>
-
-          <div className="text-white font-GentiumPlus text-md pl-32">
-            TodorokiShoto
-          </div>
-
-          <div className="text-center font-GentiumPlus text-md text-white pl-12 pr-3">
-            ฿ 400.00
-          </div>
-
-          <Link
-            to="#"
-            className="text-center text-white font-GentiumPlus text-md bg-[#5869FF] uppercase w-20 rounded-md mr-5"
-          >
-            <p>pending</p>
-          </Link>
         </div>
-      </div>
+      ))}
     </>
   );
 }

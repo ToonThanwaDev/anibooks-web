@@ -12,7 +12,6 @@ export default function OrderContainer() {
       console.log(err);
     }
   };
-  console.log(order);
 
   useEffect(() => {
     fetchOrder();
@@ -32,7 +31,7 @@ export default function OrderContainer() {
             </div>
 
             <div className="text-center text-white font-GentiumPlus text-md bg-[#5869FF] uppercase w-20 rounded-md mr-12">
-              <p>{el.status}</p>
+              <p>{order[0]?.status}</p>
             </div>
           </div>
         </div>

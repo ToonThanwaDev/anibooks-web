@@ -1,6 +1,17 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 export default function AdminHeader() {
+  const [isLogin, setIsLogin] = useState(false);
+
+  const { logout } = useAuth();
+
+  const handleSignOut = () => {
+    logout();
+    setIsLogin(false);
+  };
+
   return (
     <>
       <div className="bg-gradient-to-tr from-[#9049FF] to-[#5F0FDD] stroke-[#5516B8]">
@@ -23,17 +34,17 @@ export default function AdminHeader() {
             </div>
             <Link
               to="/"
-              className="text-4xl text-center font-BlackOpsOne text-white"
+              className="text-4xl text-center font-BlackOpsOne text-white pr-16"
             >
               ANIBOOKs
             </Link>
             <div className="hidden sm:flex sm:items-center">
-              <Link
-                to="#"
+              <button
                 className="text-white text-lg font-GentiumPlus hover:underline mr-4"
+                onClick={handleSignOut}
               >
                 Sign out
-              </Link>
+              </button>
             </div>
           </div>
         </div>
