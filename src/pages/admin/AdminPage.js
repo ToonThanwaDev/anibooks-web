@@ -15,20 +15,16 @@ export default function AdminPage() {
               </h1>
             </div>
           </div>
-          <div className="flex justify-between mt-10 mb-5 ">
-            <h3 className="font-GentiumPlus text-white text-md uppercase w-2/5 ">
+          <div className="flex mt-10 mb-5 ">
+            <h3 className="font-GentiumPlus text-white text-md uppercase basis-20 ">
               Order
             </h3>
-            <h3 className="font-GentiumPlus text-white text-md uppercase w-2/5 ">
+            <h3 className="font-GentiumPlus text-white text-md uppercase grow text-center">
               Slip URL
             </h3>
 
-            <h3 className="font-GentiumPlus text-center text-white text-md uppercase w-1/5 pr-14 ">
+            <h3 className="font-GentiumPlus text-white text-md uppercase basis-96 pl-4">
               Customer Name
-            </h3>
-
-            <h3 className="font-GentiumPlus text-white text-md uppercase w-1/5 pl-28 invisible">
-              Status
             </h3>
           </div>
           <AdminProcessContainer />

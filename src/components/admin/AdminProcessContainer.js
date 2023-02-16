@@ -46,17 +46,15 @@ export default function AdminProcessContainer() {
             <div className="font-bold text-md text-white font-GentiumPlus ">
               {el.id}
             </div>
-            <div className="flex flex-row items-center ml-20 pl-6">
-              <div className="flex">
-                <div className="font-bold text-md text-white font-GentiumPlus pl-2 w-36">
-                  {/* {el.Payment.slipImage} */}
-                </div>
+            <div className="flex basis-20">
+              <div className="font-bold text-md text-white font-GentiumPlus">
+                {el.Payments[0].slipImage}
               </div>
             </div>
-            <div className="text-white font-GentiumPlus text-md pl-32">
-              {/* {el.username} */}
+            <div className="text-white font-GentiumPlus text-md ">
+              {el.User.firstName} {el.User.lastName}
             </div>
-            <div>
+            <div className="flex">
               <button
                 className="text-center text-white font-GentiumPlus text-md bg-[#4BB543] uppercase w-20 rounded-md mr-4"
                 onClick={() => {

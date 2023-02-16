@@ -62,7 +62,7 @@ export default function CartContainer() {
           </div>
 
           <div className="text-center font-GentiumPlus text-md text-white pr-16">
-            {`฿ ${el.Product.price}`}
+            {`฿ ${el.Product.price * el.quantity}`}
           </div>
 
           <button
