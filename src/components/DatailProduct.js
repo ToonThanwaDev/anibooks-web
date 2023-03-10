@@ -23,11 +23,7 @@ export default function DetailProduct() {
     <div className="md:flex items-center -mx-10">
       <div className="w-full md:w-1/2 px-10 mb-10 md:mb-0">
         <div className="relative">
-          <img
-            src={product.image}
-            className="w-full relative z-10"
-            alt="product image"
-          />
+          <img src={product.image} className="w-full relative z-10" alt="product image" />
         </div>
       </div>
       <div className="w-full md:w-1/2 px-10">
@@ -35,15 +31,11 @@ export default function DetailProduct() {
           <h1 className="font-bold uppercase text-2xl mb-5 text-white font-GentiumPlus">
             {product.name}
           </h1>
-          <p className="text-sm text-white font-GentiumPlus">
-            {product.datail}
-          </p>
+          <p className="text-sm text-white font-GentiumPlus">{product.detail}</p>
         </div>
         <div>
           <div className="inline-block align-bottom mr-5 text-white">
-            <span className="text-2xl leading-none align-baseline font-GentiumPlus">
-              ฿
-            </span>
+            <span className="text-2xl leading-none align-baseline font-GentiumPlus">฿</span>
             <span className="font-bold text-4xl leading-none align-baseline font-GentiumPlus">
               {product.price}
             </span>

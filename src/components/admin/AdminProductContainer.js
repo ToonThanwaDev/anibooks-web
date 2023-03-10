@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import * as productApi from "../../apis/productApi";
+import * as adminApi from "../../apis/adminApi";
 
 export default function AdminProductContainer() {
   const [productInfo, setProductInfo] = useState([]);
@@ -13,14 +14,23 @@ export default function AdminProductContainer() {
     fetchProduct();
   }, []);
 
+  const handleDelete = async (productId) => {
+    try {
+      await adminApi.deleteProduct(productId);
+      setProductInfo((prevProductInfo) =>
+        prevProductInfo.filter((product) => product.id !== productId)
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <>
-      {productInfo?.map(el => (
+      {productInfo?.map((el) => (
         <div className="container px-4 py-4 border-b">
           <div className="flex items-center justify-between mt-10 mb-5 ">
-            <div className="font-bold text-md text-white font-GentiumPlus ml-4">
-              {el.id}
-            </div>
+            <div className="font-bold text-md text-white font-GentiumPlus ml-4">{el.id}</div>
 
             <div className="flex items-center ml-20 pl-6">
               <div className="w-20">
@@ -28,24 +38,20 @@ export default function AdminProductContainer() {
               </div>
 
               <div className="w-40">
-                <div className="font-bold text-md text-white font-GentiumPlus">
-                  {el.name}
-                </div>
+                <div className="font-bold text-md text-white font-GentiumPlus">{el.name}</div>
               </div>
             </div>
 
-            <div className="text-center font-GentiumPlus text-md text-white">
-              {`฿ ${el.price}`}
-            </div>
+            <div className="text-center font-GentiumPlus text-md text-white">{`฿ ${el.price}`}</div>
 
             <div className="flex">
               <Link
-                to="/admin/edit"
+                to={`/admin/edit/${el.id}`}
                 className="text-center text-white font-GentiumPlus text-md bg-[#9049FF] uppercase w-20 rounded-md mr-6"
               >
                 <p>edit</p>
               </Link>
-              <button>
+              <button onClick={() => handleDelete(el.id)}>
                 <svg
                   width="24"
                   height="24"

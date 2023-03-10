@@ -11,9 +11,7 @@ export default function AdminProductPage() {
         <div className="container mx-auto px-4 vh-100">
           <div className="flex items-center justify-center my-6 py-4">
             <div className="flex justify-center pb-8 w-full">
-              <h1 className="font-GentiumPlus text-4xl font-bold text-white mt-4">
-                Product
-              </h1>
+              <h1 className="font-GentiumPlus text-4xl font-bold text-white mt-4">Product</h1>
             </div>
           </div>
           <Link
@@ -23,15 +21,9 @@ export default function AdminProductPage() {
             Add Product +
           </Link>
           <div className="flex justify-between mt-12 pb-5 border-b w-full">
-            <div className="font-GentiumPlus text-white text-md uppercase ">
-              Product ID
-            </div>
-            <div className="font-GentiumPlus text-white text-md uppercase ">
-              Products
-            </div>
-            <div className="font-GentiumPlus text-center text-white text-md uppercase  ">
-              Price
-            </div>
+            <div className="font-GentiumPlus text-white text-md uppercase ">Product ID</div>
+            <div className="font-GentiumPlus text-white text-md uppercase ">Products</div>
+            <div className="font-GentiumPlus text-center text-white text-md uppercase  ">Price</div>
             <div className="w-50 invisible">Date</div>
           </div>
           <Container>

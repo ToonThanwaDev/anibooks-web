@@ -12,14 +12,12 @@ export default function OrderPage() {
           <div className="flex shadow-md justify-center">
             <div className="w-3/4 bg-gradient-to-tr from-[#9049FF]/60 to-[#5F0FDD]/60 shadow-2xl shadow-purple-500 px-10 py-10">
               <div className="flex justify-center border-b pb-8">
-                <h1 className="font-GentiumPlus text-2xl text-white">
-                  My Order
-                </h1>
+                <h1 className="font-GentiumPlus text-2xl text-white">My Order</h1>
               </div>
-              <div className="flex justify-between mt-10 mb-5 ">
-                <h3 className="font-GentiumPlus text-white text-md uppercase w-2/5 ">
-                  Date
-                </h3>
+              <div className="grid grid-cols-4 mt-10 mb-5 ">
+                <h3 className="font-GentiumPlus text-white text-md uppercase w-2/5 ">name</h3>
+                <h3 className="font-GentiumPlus text-white text-md uppercase w-2/5 ">image</h3>
+                <h3 className="font-GentiumPlus text-white text-md uppercase w-2/5 ml-4 ">Date</h3>
                 <h3 className="font-GentiumPlus text-white text-md uppercase w-1/5 pl-16">
                   Status
                 </h3>

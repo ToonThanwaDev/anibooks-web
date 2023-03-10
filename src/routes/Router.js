@@ -88,7 +88,7 @@ const router = createBrowserRouter([
     )
   },
   {
-    path: "/admin/edit",
+    path: "/admin/edit/:productId",
     element: (
       <ProtectedRoute>
         <EditProduct />

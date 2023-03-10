@@ -34,24 +34,24 @@ export default function AdminProcessContainer() {
     }
   };
 
+  console.log(handleReject);
+
   useEffect(() => {
     fetchOrder();
   }, []);
 
   return (
     <>
-      {admin.map(el => (
+      {admin.map((el) => (
         <div className="container px-4 py-4 border-b">
           <div className="flex items-center justify-between mt-10 mb-5 ">
-            <div className="font-bold text-md text-white font-GentiumPlus ">
-              {el.id}
-            </div>
+            <div className="font-bold text-md text-white font-GentiumPlus ">{el.id}</div>
             <div className="flex basis-20">
               <div className="font-bold text-md text-white font-GentiumPlus">
-                {el.Payments[0].slipImage}
+                <img src={el.Payments[0].slipImage} alt="slipImage" className="h-32 w-48" />
               </div>
             </div>
-            <div className="text-white font-GentiumPlus text-md ">
+            <div className="text-white font-GentiumPlus text-md pl-9">
               {el.User.firstName} {el.User.lastName}
             </div>
             <div className="flex">
